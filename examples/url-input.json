@@ -1,0 +1,8 @@
+{
+  "urls": [
+    "https://example.com",
+    "http://example.com/old-page"
+  ],
+  "followRedirects": true,
+  "maxUrlsTotal": 100
+}

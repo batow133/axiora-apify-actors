@@ -1,0 +1,9 @@
+{
+  "domains": [
+    "stripe.com",
+    "shopify.com"
+  ],
+  "maxPagesPerDomain": 4,
+  "includeTechnologies": true,
+  "includeDnsSignals": true
+}
