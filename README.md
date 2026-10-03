@@ -40,6 +40,9 @@ curl -X POST "https://api.apify.com/v2/acts/axiorasolutions~ats-job-scraper/runs
 - [Bulk URL and redirect-chain audits before a migration](https://dev.to/axiora/bulk-url-and-redirect-chain-audits-a-2-minute-safety-net-before-a-migration-29io)
 - [5 no-API-key data Actors for recruiting, ASO, lead-gen and SEO](https://dev.to/axiora/5-no-api-key-data-actors-for-recruiting-aso-lead-gen-and-seo-1i59)
 
+- [Greenhouse vs Ashby vs Lever vs SmartRecruiters: which job API should you scrape?](https://dev.to/axiora/greenhouse-vs-ashby-vs-lever-vs-smartrecruiters-which-job-api-should-you-scrape-56a1)
+- [A hiring-signal pipeline in 15 minutes: domains to ATS to job postings](https://dev.to/axiora/a-hiring-signal-pipeline-in-15-minutes-domains-ats-job-postings-3l1n)
+
 ## How they chain
 
 - Domain Contact Enricher → detects the ATS → `atsJobScraperInput` feeds the ATS Job Scraper.
