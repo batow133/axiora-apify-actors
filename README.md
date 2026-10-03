@@ -47,3 +47,7 @@ curl -X POST "https://api.apify.com/v2/acts/axiorasolutions~ats-job-scraper/runs
 
 - Domain Contact Enricher → detects the ATS → `atsJobScraperInput` feeds the ATS Job Scraper.
 - Sitemap SEO Audit → URL list → URL Status Checker for a broken-link report.
+
+## Follow
+
+Mastodon: [@batow133@mastodon.social](https://mastodon.social/@batow133)
