@@ -12,7 +12,7 @@ All ten run on public sources with **no API keys and no logins**, and all ten ar
 
 ## SEO
 **SEO Audit Tool** — robots/sitemap traversal plus per-URL indexability: canonicals, noindex, hreflang, titles, images, links.
-→ https://apify.com/axiorasolutions/seo-audit-tool
+→ https://apify.com/axiorasolutions/sitemap-seo-audit
 
 **URL Status Checker** — bulk status codes and full redirect chains for broken-link reports and migrations.
 → https://apify.com/axiorasolutions/url-status-checker

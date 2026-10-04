@@ -4,7 +4,7 @@
 
 A sitemap gives you a list. What you actually need to know is whether those pages **can rank**: do they return 200, do they self-canonical, are they accidentally noindexed, do they have a title of a sane length, is the hreflang cluster reciprocal?
 
-The [SEO Audit Tool](https://apify.com/axiorasolutions/seo-audit-tool) does the full pass, bounded:
+The [SEO Audit Tool](https://apify.com/axiorasolutions/sitemap-seo-audit) does the full pass, bounded:
 
 1. Fetches `robots.txt` and follows every declared `Sitemap:`.
 2. Walks nested sitemap **index** files up to your cap.
@@ -57,4 +57,4 @@ If a site has no sitemap, there is nothing to audit. The Actor tells you so (`EM
 
 ## Try it
 
-**[SEO Audit Tool: Sitemap & Indexability](https://apify.com/axiorasolutions/seo-audit-tool)** — point it at a domain or a direct sitemap URL.
+**[SEO Audit Tool: Sitemap & Indexability](https://apify.com/axiorasolutions/sitemap-seo-audit)** — point it at a domain or a direct sitemap URL.
