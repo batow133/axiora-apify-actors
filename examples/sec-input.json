@@ -1,0 +1,11 @@
+{
+  "queries": [
+    "AAPL",
+    "TSLA"
+  ],
+  "mode": "filings",
+  "formTypes": [
+    "10-K"
+  ],
+  "maxFilingsPerCompany": 4
+}

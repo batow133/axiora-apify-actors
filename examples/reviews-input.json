@@ -1,13 +1,11 @@
 {
   "apps": [
-    "310633997",
-    "com.spotify.client"
+    "310633997"
   ],
   "countries": [
     "us",
     "gb",
     "de"
   ],
-  "maxReviewsPerApp": 200,
-  "sortBy": "mostRecent"
+  "maxReviewsPerApp": 200
 }

@@ -1,0 +1,7 @@
+{
+  "sites": [
+    "apify.com"
+  ],
+  "mode": "audit",
+  "maxUrlsPerSite": 100
+}

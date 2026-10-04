@@ -1,10 +1,8 @@
 {
   "boards": [
     "greenhouse:airtable",
-    "ashby:Linear",
-    "https://jobs.lever.co/spotify"
+    "ashby:Linear"
   ],
   "maxJobsPerBoard": 50,
-  "maxJobsTotal": 100,
   "includeDescription": true
 }

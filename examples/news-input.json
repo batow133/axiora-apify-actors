@@ -1,0 +1,7 @@
+{
+  "sources": [
+    "gnews:artificial intelligence",
+    "https://techcrunch.com/feed/"
+  ],
+  "maxItemsPerSource": 50
+}
