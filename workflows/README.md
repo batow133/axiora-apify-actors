@@ -15,6 +15,8 @@ Ten free-to-import n8n workflows for paid or free Apify accounts. Every workflow
 | **Collect recent public Substack post metadata** — Read publication metadata without requesting subscriber-only content. | [Example input](https://apify.com/axiorasolutions/substack-archive-scraper/examples/axiora-substack-archive-csv-export) · [Actor / price](https://apify.com/axiorasolutions/substack-archive-scraper) | [JSON](https://raw.githubusercontent.com/batow133/axiora-apify-actors/master/workflows/n8n/substack-archive-scraper.json) |
 | **Check site redirects and broken URLs** — Audit a short list of known URLs you may check. | [Example input](https://apify.com/axiorasolutions/url-status-checker/examples/axiora-bulk-url-status-check) · [Actor / price](https://apify.com/axiorasolutions/url-status-checker) | [JSON](https://raw.githubusercontent.com/batow133/axiora-apify-actors/master/workflows/n8n/url-status-checker.json) |
 
+**Optional SEO report:** [Download the weekly indexability workflow](n8n/sitemap-indexability-weekly.json). Summarizes HTTP errors, redirects, noindex and canonical mismatches for a bounded sitemap sample. The weekly trigger is off, and the import includes no credentials.
+
 ## How to use
 
 1. **Apify only:** Open an example above, copy it, replace the sample sources, and run once in your own account. Review pricing. Save the input as your own task, then [create an Apify schedule](https://docs.apify.com/platform/actors/running/schedules) if you want repeat runs.
