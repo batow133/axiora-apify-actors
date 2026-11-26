@@ -1,5 +1,9 @@
 # Google News + RSS + Atom + JSON Feed: one schema for RAG pipelines
 
+<!-- axiora-workflow-links-v1 -->
+
+**Try it:** [Copy a small Apify example](https://apify.com/axiorasolutions/news-feed-scraper/examples/axiora-rss-feed-json-export) or [download the n8n workflow](https://raw.githubusercontent.com/batow133/axiora-apify-actors/master/workflows/n8n/news-feed-scraper.json). Start manually in your own Apify account, review the [Actor price](https://apify.com/axiorasolutions/news-feed-scraper), and [schedule only when ready](https://docs.apify.com/platform/actors/running/schedules).
+
 ## Feeds are the cheapest fresh data on the web
 
 For RAG, monitoring or research, feeds beat scraping: they are small, structured and published for exactly this. The problem is there are at least four formats, plus Google News, and each returns different field names.

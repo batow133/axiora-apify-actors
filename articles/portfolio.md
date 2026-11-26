@@ -1,6 +1,8 @@
 # 10 no-API-key Apify Actors for data pipelines (the full portfolio)
 
-All ten run on public sources with **no API keys and no logins**, and all ten are pay-per-result, so a test costs cents.
+<!-- axiora-workflow-links-v1 -->
+
+[Try all ten workflows](https://github.com/batow133/axiora-apify-actors/tree/master/workflows): copy a small Apify input for any Actor, download its n8n workflow, or set up a recurring run. Usage is charged through your Apify account; check each Actor's price before running.
 
 ## Jobs & recruiting
 **ATS Job Scraper** — Greenhouse, Ashby, Lever and SmartRecruiters in one schema, with salary provenance and change hashes.

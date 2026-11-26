@@ -1,5 +1,9 @@
 # Export a Substack archive with engagement data (posts, reactions, restacks)
 
+<!-- axiora-workflow-links-v1 -->
+
+**Try it:** [Copy a small Apify example](https://apify.com/axiorasolutions/substack-archive-scraper/examples/axiora-substack-archive-csv-export) or [download the n8n workflow](https://raw.githubusercontent.com/batow133/axiora-apify-actors/master/workflows/n8n/substack-archive-scraper.json). Start manually in your own Apify account, review the [Actor price](https://apify.com/axiorasolutions/substack-archive-scraper), and [schedule only when ready](https://docs.apify.com/platform/actors/running/schedules).
+
 ## The archive API nobody documents
 
 Substack publications expose their archive at `/{publication}/api/v1/archive?sort=new&limit=12&offset=0` — the same endpoint the site uses to render its own archive page. It works on `*.substack.com` **and** on custom domains like `www.noahpinion.blog`.

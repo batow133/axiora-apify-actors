@@ -1,5 +1,9 @@
 # App Store reviews are per country: how to export them without an API key
 
+<!-- axiora-workflow-links-v1 -->
+
+**Try it:** [Copy a small Apify example](https://apify.com/axiorasolutions/app-review-scraper/examples/axiora-export-app-store-reviews) or [download the n8n workflow](https://raw.githubusercontent.com/batow133/axiora-apify-actors/master/workflows/n8n/app-review-scraper.json). Start manually in your own Apify account, review the [Actor price](https://apify.com/axiorasolutions/app-review-scraper), and [schedule only when ready](https://docs.apify.com/platform/actors/running/schedules).
+
 ## The country you pick decides which reviews exist
 
 Apple does not have "the reviews" for an app. It has a separate review set for every storefront — US, GB, DE, JP, BR, and roughly 170 more. A US-only export will never show you the German complaints, and a German export will never show the one-star reviews from Brazil.

@@ -1,5 +1,9 @@
 # A sitemap SEO audit that actually checks indexability (not just URLs)
 
+<!-- axiora-workflow-links-v1 -->
+
+**Try it:** [Copy a small Apify example](https://apify.com/axiorasolutions/sitemap-seo-audit/examples/axiora-website-seo-check) or [download the n8n workflow](https://raw.githubusercontent.com/batow133/axiora-apify-actors/master/workflows/n8n/sitemap-seo-audit.json). Start manually in your own Apify account, review the [Actor price](https://apify.com/axiorasolutions/sitemap-seo-audit), and [schedule only when ready](https://docs.apify.com/platform/actors/running/schedules).
+
 ## Extracting URLs is the easy part
 
 A sitemap gives you a list. What you actually need to know is whether those pages **can rank**: do they return 200, do they self-canonical, are they accidentally noindexed, do they have a title of a sane length, is the hreflang cluster reciprocal?

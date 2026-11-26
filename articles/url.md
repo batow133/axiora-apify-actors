@@ -1,5 +1,9 @@
 # Bulk URL and redirect-chain audits: a 2-minute safety net before a migration
 
+<!-- axiora-workflow-links-v1 -->
+
+**Try it:** [Copy a small Apify example](https://apify.com/axiorasolutions/url-status-checker/examples/axiora-bulk-url-status-check) or [download the n8n workflow](https://raw.githubusercontent.com/batow133/axiora-apify-actors/master/workflows/n8n/url-status-checker.json). Start manually in your own Apify account, review the [Actor price](https://apify.com/axiorasolutions/url-status-checker), and [schedule only when ready](https://docs.apify.com/platform/actors/running/schedules).
+
 ## The five minutes before you ship a migration
 
 You changed your URL structure, added a trailing slash policy, or moved a domain. The only thing standing between you and a traffic cliff is a redirect map that actually works. Testing 500 URLs by hand is not a plan.

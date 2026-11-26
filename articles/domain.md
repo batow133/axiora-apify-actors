@@ -1,5 +1,9 @@
 # Company enrichment without a data vendor: domains to emails, tech stack and MX
 
+<!-- axiora-workflow-links-v1 -->
+
+**Try it:** [Copy a small Apify example](https://apify.com/axiorasolutions/domain-contact-enricher/examples/axiora-company-contact-finder) or [download the n8n workflow](https://raw.githubusercontent.com/batow133/axiora-apify-actors/master/workflows/n8n/domain-contact-enricher.json). Start manually in your own Apify account, review the [Actor price](https://apify.com/axiorasolutions/domain-contact-enricher), and [schedule only when ready](https://docs.apify.com/platform/actors/running/schedules).
+
 ## What a lead list actually needs
 
 You have a list of company domains. You want, per company:

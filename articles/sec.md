@@ -1,5 +1,9 @@
 # SEC EDGAR without an API key: filings, XBRL financials, full-text search
 
+<!-- axiora-workflow-links-v1 -->
+
+**Try it:** [Copy a small Apify example](https://apify.com/axiorasolutions/sec-edgar-api/examples/axiora-sec-company-filings-export) or [download the n8n workflow](https://raw.githubusercontent.com/batow133/axiora-apify-actors/master/workflows/n8n/sec-edgar-api.json). Start manually in your own Apify account, review the [Actor price](https://apify.com/axiorasolutions/sec-edgar-api), and [schedule only when ready](https://docs.apify.com/platform/actors/running/schedules).
+
 ## EDGAR is free, but it isn't one API
 
 The SEC publishes three useful surfaces, each with its own shape:

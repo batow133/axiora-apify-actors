@@ -1,5 +1,9 @@
 # One dataset from Greenhouse, Ashby and Lever: a clean way to track job postings
 
+<!-- axiora-workflow-links-v1 -->
+
+**Try it:** [Copy a small Apify example](https://apify.com/axiorasolutions/ats-job-scraper/examples/axiora-greenhouse-jobs-csv) or [download the n8n workflow](https://raw.githubusercontent.com/batow133/axiora-apify-actors/master/workflows/n8n/ats-job-scraper.json). Start manually in your own Apify account, review the [Actor price](https://apify.com/axiorasolutions/ats-job-scraper), and [schedule only when ready](https://docs.apify.com/platform/actors/running/schedules).
+
 ## Every applicant tracking system speaks a different dialect
 
 If you track hiring signals, you have probably written this loop more than once:

@@ -1,5 +1,9 @@
 # Scrape any Shopify store's variants (price, SKU, stock) without an API key
 
+<!-- axiora-workflow-links-v1 -->
+
+**Try it:** [Copy a small Apify example](https://apify.com/axiorasolutions/shopify-variant-scraper/examples/axiora-shopify-product-variant-csv) or [download the n8n workflow](https://raw.githubusercontent.com/batow133/axiora-apify-actors/master/workflows/n8n/shopify-variant-scraper.json). Start manually in your own Apify account, review the [Actor price](https://apify.com/axiorasolutions/shopify-variant-scraper), and [schedule only when ready](https://docs.apify.com/platform/actors/running/schedules).
+
 ## The public feed most people forget
 
 Every Shopify store exposes its catalogue at `/{store}/products.json` — the same feed the storefront's own JavaScript uses. No API key, no app install, no OAuth. You just need to treat it like the fragile public endpoint it is.
