@@ -17,6 +17,8 @@ Ten free-to-import n8n workflows for paid or free Apify accounts. Every workflow
 
 **Optional SEO report:** [Download the weekly indexability workflow](n8n/sitemap-indexability-weekly.json). Summarizes HTTP errors, redirects, noindex and canonical mismatches for a bounded sitemap sample. The weekly trigger is off, and the import includes no credentials.
 
+Browse setup instructions, output fields and all 11 downloads in the [Axiora n8n template library](https://axiora-solutions.vercel.app/n8n).
+
 ## How to use
 
 1. **Apify only:** Open an example above, copy it, replace the sample sources, and run once in your own account. Review pricing. Save the input as your own task, then [create an Apify schedule](https://docs.apify.com/platform/actors/running/schedules) if you want repeat runs.

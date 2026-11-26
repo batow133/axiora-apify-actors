@@ -6,6 +6,8 @@
 
 **Want a weekly summary?** [Download the tested n8n report](https://raw.githubusercontent.com/batow133/axiora-apify-actors/master/workflows/n8n/sitemap-indexability-weekly.json). Summarizes HTTP errors, redirects, noindex and canonical mismatches for a bounded sitemap sample. The weekly trigger is off, and the import includes no credentials.
 
+[Read the weekly sitemap n8n setup guide](https://axiora-solutions.vercel.app/n8n/sitemap-indexability-weekly) for import instructions and an explanation of the report.
+
 ## Extracting URLs is the easy part
 
 A sitemap gives you a list. What you actually need to know is whether those pages **can rank**: do they return 200, do they self-canonical, are they accidentally noindexed, do they have a title of a sane length, is the hreflang cluster reciprocal?
