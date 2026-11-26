@@ -1,0 +1,181 @@
+{
+  "capturedAt": "2026-11-26T15:35:46.196Z",
+  "unit": "Written reviews in the first most-recent public feed page, not all App Store ratings",
+  "maxReviewsPerAppStorefront": 50,
+  "rows": [
+    {
+      "app": "Todoist",
+      "appId": "572688855",
+      "storefront": "us",
+      "source": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=572688855/sortby=mostrecent/json",
+      "writtenReviews": 50,
+      "ratingsOneThroughFive": [
+        9,
+        2,
+        5,
+        4,
+        30
+      ],
+      "oneOrTwoStars": 11,
+      "versionTagged": 50,
+      "lowStarsVersionTagged": 11,
+      "lowStarKeywordHits": {
+        "sync": 0,
+        "widget": 1,
+        "calendar": 0,
+        "crash": 4,
+        "notifications": 0,
+        "subscription": 0
+      },
+      "oldestDate": "2026-09-26",
+      "newestDate": "2026-11-23",
+      "duplicates": 0,
+      "excluded": 0
+    },
+    {
+      "app": "Todoist",
+      "appId": "572688855",
+      "storefront": "gb",
+      "source": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=572688855/sortby=mostrecent/json",
+      "writtenReviews": 50,
+      "ratingsOneThroughFive": [
+        12,
+        3,
+        3,
+        4,
+        28
+      ],
+      "oneOrTwoStars": 15,
+      "versionTagged": 50,
+      "lowStarsVersionTagged": 15,
+      "lowStarKeywordHits": {
+        "sync": 2,
+        "widget": 0,
+        "calendar": 2,
+        "crash": 1,
+        "notifications": 1,
+        "subscription": 2
+      },
+      "oldestDate": "2025-10-14",
+      "newestDate": "2026-11-24",
+      "duplicates": 0,
+      "excluded": 0
+    },
+    {
+      "app": "TickTick",
+      "appId": "626144601",
+      "storefront": "us",
+      "source": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=626144601/sortby=mostrecent/json",
+      "writtenReviews": 50,
+      "ratingsOneThroughFive": [
+        1,
+        1,
+        4,
+        4,
+        40
+      ],
+      "oneOrTwoStars": 2,
+      "versionTagged": 50,
+      "lowStarsVersionTagged": 2,
+      "lowStarKeywordHits": {
+        "sync": 0,
+        "widget": 0,
+        "calendar": 0,
+        "crash": 0,
+        "notifications": 0,
+        "subscription": 0
+      },
+      "oldestDate": "2026-11-02",
+      "newestDate": "2026-11-24",
+      "duplicates": 0,
+      "excluded": 0
+    },
+    {
+      "app": "TickTick",
+      "appId": "626144601",
+      "storefront": "gb",
+      "source": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=626144601/sortby=mostrecent/json",
+      "writtenReviews": 50,
+      "ratingsOneThroughFive": [
+        2,
+        3,
+        0,
+        5,
+        40
+      ],
+      "oneOrTwoStars": 5,
+      "versionTagged": 50,
+      "lowStarsVersionTagged": 5,
+      "lowStarKeywordHits": {
+        "sync": 0,
+        "widget": 0,
+        "calendar": 1,
+        "crash": 0,
+        "notifications": 0,
+        "subscription": 0
+      },
+      "oldestDate": "2026-05-16",
+      "newestDate": "2026-11-22",
+      "duplicates": 0,
+      "excluded": 0
+    },
+    {
+      "app": "Things 3",
+      "appId": "904237743",
+      "storefront": "us",
+      "source": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=904237743/sortby=mostrecent/json",
+      "writtenReviews": 50,
+      "ratingsOneThroughFive": [
+        6,
+        3,
+        1,
+        5,
+        35
+      ],
+      "oneOrTwoStars": 9,
+      "versionTagged": 50,
+      "lowStarsVersionTagged": 9,
+      "lowStarKeywordHits": {
+        "sync": 1,
+        "widget": 0,
+        "calendar": 0,
+        "crash": 0,
+        "notifications": 0,
+        "subscription": 0
+      },
+      "oldestDate": "2026-06-27",
+      "newestDate": "2026-11-24",
+      "duplicates": 0,
+      "excluded": 0
+    },
+    {
+      "app": "Things 3",
+      "appId": "904237743",
+      "storefront": "gb",
+      "source": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=904237743/sortby=mostrecent/json",
+      "writtenReviews": 50,
+      "ratingsOneThroughFive": [
+        3,
+        6,
+        6,
+        10,
+        25
+      ],
+      "oneOrTwoStars": 9,
+      "versionTagged": 50,
+      "lowStarsVersionTagged": 9,
+      "lowStarKeywordHits": {
+        "sync": 1,
+        "widget": 1,
+        "calendar": 0,
+        "crash": 1,
+        "notifications": 0,
+        "subscription": 0
+      },
+      "oldestDate": "2024-11-21",
+      "newestDate": "2026-11-08",
+      "duplicates": 0,
+      "excluded": 0
+    }
+  ]
+}

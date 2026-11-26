@@ -4,6 +4,10 @@ Production-ready [Apify Actors](https://apify.com/axiorasolutions) for recruitin
 SEO, news, mobile, lead-gen and finance data. Public sources only: **no API key, no login**.
 All pay-per-result, so a test costs cents.
 
+## Start here: compare iOS reviews by storefront and version
+
+[See a real 300-review workflow](examples/ios-review-triage/) comparing Todoist, TickTick and Things 3 in the US and UK. It includes a reproducible Apple feed script, aggregate results, and a spreadsheet workflow for checking complaints after a release.
+
 ## The Actors
 
 | Actor | What it returns | Link |
