@@ -27,8 +27,6 @@ All **300 of 300** sampled reviews had Apple's reported app version, including a
 
 Keyword hits count at most once per review, use a small English-language term list and are not human-validated labels. The list does not detect every complaint or every language. Empty or unavailable storefronts must be reported separately. Written reviews aren't all ratings, and a feed snapshot isn't representative of all users.
 
-## Request a done-for-you brief
+## Run the self-serve reviews Actor on Apify
 
-Axiora is testing a **US$99 one-time pilot** for up to **three public iOS apps**, **two English-language storefronts** (US, UK, Canada or Australia) and **50 available written reviews per app/storefront**. You receive a spreadsheet with version and storefront counts, a short review of the recurring complaints, source and coverage notes, and three suggested follow-up checks. No Apify account is required for the service.
-
-[Contact Axiora on Bluesky](https://bsky.app/profile/batow133.bsky.social) with the public App Store links, storefronts and the decision you're trying to make. You can reply to the pilot announcement with public URLs; don't post private data. Axiora confirms source coverage, delivery timing and final invoice details before you commit. No payment is taken by this page. No guaranteed coverage, diagnosis, official affiliation or subscription.
+Use the [App Store Reviews Scraper on Apify](https://apify.com/axiorasolutions/app-review-scraper) for hosted runs, saved inputs and CSV exports. Review the current price and set a run spending cap. The same saved input can be scheduled in Apify; for overlapping samples, deduplicate on `reviewUid` before appending rows to another system.
