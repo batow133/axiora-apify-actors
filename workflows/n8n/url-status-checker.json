@@ -1,0 +1,107 @@
+{
+  "name": "Check site redirects and broken URLs with Apify",
+  "nodes": [
+    {
+      "name": "Try once manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "id": "a791f72d-6f73-402b-a812-ca3378a87cdc",
+      "parameters": {},
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Daily schedule (off)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "id": "17d63424-8758-4f68-ad1b-b89d7a458635",
+      "disabled": true,
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1,
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "position": [
+        0,
+        200
+      ]
+    },
+    {
+      "name": "Run Actor and get dataset rows",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "id": "411202c5-6266-4728-a3ac-aa28ff8c1008",
+      "position": [
+        300,
+        0
+      ],
+      "retryOnFail": false,
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/axiorasolutions~url-status-checker/run-sync-get-dataset-items?format=json&clean=true&limit=1000&timeout=90&maxTotalChargeUsd=0.25&restartOnError=false&forcePermissionLevel=LIMITED_PERMISSIONS",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"urls\": [\n    \"https://apify.com\",\n    \"https://crawlee.dev\"\n  ],\n  \"maxUrlsTotal\": 5,\n  \"method\": \"GET\",\n  \"followRedirects\": true,\n  \"fetchPageFacts\": true\n}",
+        "options": {
+          "timeout": 110000
+        }
+      }
+    },
+    {
+      "name": "Read before running",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "id": "e618c4d1-792a-46a5-a5c1-00ec751dd4d6",
+      "position": [
+        -300,
+        -260
+      ],
+      "parameters": {
+        "width": 540,
+        "height": 230,
+        "content": "## Check site redirects and broken URLs\nCreate a Header Auth credential: name **Authorization**, value **Bearer YOUR_APIFY_TOKEN**. Keep it in n8n credentials, not workflow JSON. Test manually, inspect the rows, then enable the disabled schedule only if you want recurring paid runs.\n\nReview each requested URL and HTTP status; do not equate every blocked URL with a broken page.\n\n[Actor and pricing](https://apify.com/axiorasolutions/url-status-checker) · [Try existing Apify example](https://apify.com/axiorasolutions/url-status-checker/examples/axiora-bulk-url-status-check)"
+      }
+    }
+  ],
+  "connections": {
+    "Try once manually": {
+      "main": [
+        [
+          {
+            "node": "Run Actor and get dataset rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Daily schedule (off)": {
+      "main": [
+        [
+          {
+            "node": "Run Actor and get dataset rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "executionTimeout": 120
+  },
+  "pinData": {},
+  "tags": []
+}

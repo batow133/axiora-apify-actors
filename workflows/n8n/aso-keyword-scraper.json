@@ -1,0 +1,107 @@
+{
+  "name": "Track iOS keyword ranks by country with Apify",
+  "nodes": [
+    {
+      "name": "Try once manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "id": "4834c210-a7ae-4500-a819-0c23e9ef47c1",
+      "parameters": {},
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Daily schedule (off)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "id": "dcf4749c-e293-4ed3-a0f1-5a092727c59b",
+      "disabled": true,
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1,
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "position": [
+        0,
+        200
+      ]
+    },
+    {
+      "name": "Run Actor and get dataset rows",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "id": "5fa4271d-c9f2-47a7-aef1-e1e872f2e464",
+      "position": [
+        300,
+        0
+      ],
+      "retryOnFail": false,
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/axiorasolutions~aso-keyword-scraper/run-sync-get-dataset-items?format=json&clean=true&limit=1000&timeout=90&maxTotalChargeUsd=0.25&restartOnError=false&forcePermissionLevel=LIMITED_PERMISSIONS",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"keywords\": [\n    \"habit tracker\"\n  ],\n  \"countries\": [\n    \"us\"\n  ],\n  \"resultsPerKeyword\": 10,\n  \"maxTotal\": 10,\n  \"includeAppDetails\": false\n}",
+        "options": {
+          "timeout": 110000
+        }
+      }
+    },
+    {
+      "name": "Read before running",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "id": "7711d53e-d1ee-4411-a1e8-117c60826569",
+      "position": [
+        -300,
+        -260
+      ],
+      "parameters": {
+        "width": 540,
+        "height": 230,
+        "content": "## Track iOS keyword ranks by country\nCreate a Header Auth credential: name **Authorization**, value **Bearer YOUR_APIFY_TOKEN**. Keep it in n8n credentials, not workflow JSON. Test manually, inspect the rows, then enable the disabled schedule only if you want recurring paid runs.\n\nKeep the keyword, storefront, app ID and snapshot date.\n\n[Actor and pricing](https://apify.com/axiorasolutions/aso-keyword-scraper) · [Try existing Apify example](https://apify.com/axiorasolutions/aso-keyword-scraper/examples/axiora-app-keyword-rank-check)"
+      }
+    }
+  ],
+  "connections": {
+    "Try once manually": {
+      "main": [
+        [
+          {
+            "node": "Run Actor and get dataset rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Daily schedule (off)": {
+      "main": [
+        [
+          {
+            "node": "Run Actor and get dataset rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "executionTimeout": 120
+  },
+  "pinData": {},
+  "tags": []
+}

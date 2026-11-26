@@ -1,0 +1,107 @@
+{
+  "name": "Collect recent RSS feed items with Apify",
+  "nodes": [
+    {
+      "name": "Try once manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "id": "c34adae8-5d5f-4b5f-a123-2581f7311e13",
+      "parameters": {},
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Daily schedule (off)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "id": "c70f3f8c-a24a-42eb-a3b9-8237fcb04b96",
+      "disabled": true,
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1,
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "position": [
+        0,
+        200
+      ]
+    },
+    {
+      "name": "Run Actor and get dataset rows",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "id": "923de565-4cb1-43d5-a659-b24c94112caf",
+      "position": [
+        300,
+        0
+      ],
+      "retryOnFail": false,
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/axiorasolutions~news-feed-scraper/run-sync-get-dataset-items?format=json&clean=true&limit=1000&timeout=90&maxTotalChargeUsd=0.25&restartOnError=false&forcePermissionLevel=LIMITED_PERMISSIONS",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"sources\": [\n    \"https://techcrunch.com/feed/\"\n  ],\n  \"maxItemsPerSource\": 10,\n  \"maxItemsTotal\": 10,\n  \"includeArticleText\": false\n}",
+        "options": {
+          "timeout": 110000
+        }
+      }
+    },
+    {
+      "name": "Read before running",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "id": "3e3c7e7f-1bee-469d-abe6-c075c6f4cbe1",
+      "position": [
+        -300,
+        -260
+      ],
+      "parameters": {
+        "width": 540,
+        "height": 230,
+        "content": "## Collect recent RSS feed items\nCreate a Header Auth credential: name **Authorization**, value **Bearer YOUR_APIFY_TOKEN**. Keep it in n8n credentials, not workflow JSON. Test manually, inspect the rows, then enable the disabled schedule only if you want recurring paid runs.\n\nDeduplicate by the feed item ID or canonical URL; the example does not fetch full article text.\n\n[Actor and pricing](https://apify.com/axiorasolutions/news-feed-scraper) · [Try existing Apify example](https://apify.com/axiorasolutions/news-feed-scraper/examples/axiora-rss-feed-json-export)"
+      }
+    }
+  ],
+  "connections": {
+    "Try once manually": {
+      "main": [
+        [
+          {
+            "node": "Run Actor and get dataset rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Daily schedule (off)": {
+      "main": [
+        [
+          {
+            "node": "Run Actor and get dataset rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "executionTimeout": 120
+  },
+  "pinData": {},
+  "tags": []
+}

@@ -1,0 +1,107 @@
+{
+  "name": "Audit a sitemap weekly with Apify",
+  "nodes": [
+    {
+      "name": "Try once manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "id": "550ee531-1c24-475d-afa1-41421fab886a",
+      "parameters": {},
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Daily schedule (off)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "id": "ef81abf0-f664-4a48-acde-113665129dd0",
+      "disabled": true,
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1,
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "position": [
+        0,
+        200
+      ]
+    },
+    {
+      "name": "Run Actor and get dataset rows",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "id": "21a6e299-bd1c-467e-a2e1-05ff78145f5d",
+      "position": [
+        300,
+        0
+      ],
+      "retryOnFail": false,
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/axiorasolutions~sitemap-seo-audit/run-sync-get-dataset-items?format=json&clean=true&limit=1000&timeout=90&maxTotalChargeUsd=0.25&restartOnError=false&forcePermissionLevel=LIMITED_PERMISSIONS",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"sites\": [\n    \"apify.com\"\n  ],\n  \"mode\": \"audit\",\n  \"maxUrlsPerSite\": 10,\n  \"maxUrlsTotal\": 10,\n  \"maxSitemapsPerSite\": 5,\n  \"respectRobotsTxt\": true\n}",
+        "options": {
+          "timeout": 110000
+        }
+      }
+    },
+    {
+      "name": "Read before running",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "id": "90963dd9-75de-4db0-af2a-70a65f4a16ea",
+      "position": [
+        -300,
+        -260
+      ],
+      "parameters": {
+        "width": 540,
+        "height": 230,
+        "content": "## Audit a sitemap weekly\nCreate a Header Auth credential: name **Authorization**, value **Bearer YOUR_APIFY_TOKEN**. Keep it in n8n credentials, not workflow JSON. Test manually, inspect the rows, then enable the disabled schedule only if you want recurring paid runs.\n\nKeep one snapshot per date and compare by URL.\n\n[Actor and pricing](https://apify.com/axiorasolutions/sitemap-seo-audit) · [Try existing Apify example](https://apify.com/axiorasolutions/sitemap-seo-audit/examples/axiora-website-seo-check)"
+      }
+    }
+  ],
+  "connections": {
+    "Try once manually": {
+      "main": [
+        [
+          {
+            "node": "Run Actor and get dataset rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Daily schedule (off)": {
+      "main": [
+        [
+          {
+            "node": "Run Actor and get dataset rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "executionTimeout": 120
+  },
+  "pinData": {},
+  "tags": []
+}

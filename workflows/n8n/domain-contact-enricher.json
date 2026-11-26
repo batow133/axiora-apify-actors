@@ -1,0 +1,107 @@
+{
+  "name": "Audit public company contact pages with Apify",
+  "nodes": [
+    {
+      "name": "Try once manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "id": "0c2270c8-08e2-40b3-a035-2d56aaf457b3",
+      "parameters": {},
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Daily schedule (off)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "id": "ad67e591-5ec4-4176-ac64-6c592cc2121e",
+      "disabled": true,
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1,
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "position": [
+        0,
+        200
+      ]
+    },
+    {
+      "name": "Run Actor and get dataset rows",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "id": "35898f53-a482-4160-a35f-a89cabef2ff1",
+      "position": [
+        300,
+        0
+      ],
+      "retryOnFail": false,
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/axiorasolutions~domain-contact-enricher/run-sync-get-dataset-items?format=json&clean=true&limit=1000&timeout=90&maxTotalChargeUsd=0.25&restartOnError=false&forcePermissionLevel=LIMITED_PERMISSIONS",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"domains\": [\n    \"apify.com\"\n  ],\n  \"maxPagesPerDomain\": 2,\n  \"maxEmailsPerDomain\": 5,\n  \"respectRobotsTxt\": true\n}",
+        "options": {
+          "timeout": 110000
+        }
+      }
+    },
+    {
+      "name": "Read before running",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "id": "f99b96a0-629b-4dc3-a59c-93ce6cf02d6c",
+      "position": [
+        -300,
+        -260
+      ],
+      "parameters": {
+        "width": 540,
+        "height": 230,
+        "content": "## Audit public company contact pages\nCreate a Header Auth credential: name **Authorization**, value **Bearer YOUR_APIFY_TOKEN**. Keep it in n8n credentials, not workflow JSON. Test manually, inspect the rows, then enable the disabled schedule only if you want recurring paid runs.\n\nUse only business data you have a lawful basis to process. A scraped contact is not consent for outreach.\n\n[Actor and pricing](https://apify.com/axiorasolutions/domain-contact-enricher) · [Try existing Apify example](https://apify.com/axiorasolutions/domain-contact-enricher/examples/axiora-company-contact-finder)"
+      }
+    }
+  ],
+  "connections": {
+    "Try once manually": {
+      "main": [
+        [
+          {
+            "node": "Run Actor and get dataset rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Daily schedule (off)": {
+      "main": [
+        [
+          {
+            "node": "Run Actor and get dataset rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "executionTimeout": 120
+  },
+  "pinData": {},
+  "tags": []
+}
